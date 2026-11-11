@@ -1,0 +1,305 @@
+
+/* ==============================
+   GLOBAL CSS
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background: #0c0718;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* ==============================
+   MAIN BACKGROUND
+============================== */
+
+main {
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px 5%;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at 5% 5%,
+            #620c48 0%,
+            transparent 40%
+        ),
+        radial-gradient(
+            ellipse at 95% 80%,
+            #42105b 0%,
+            transparent 40%
+        ),
+        linear-gradient(
+            120deg,
+            #13051b,
+            #10104b,
+            #10051d
+        );
+}
+
+/* ==============================
+   SECTION 1 - NAVIGATION
+============================== */
+
+#section-1 {
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+nav {
+    width: 794px;
+    max-width: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left h4 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.right h4 {
+    font-size: 10px;
+    font-weight: 400;
+    color: white;
+    cursor: pointer;
+}
+
+/* ==============================
+   SECTION 2 - ARTWORK GRID
+============================== */
+
+#section-2 {
+    width: 100%;
+}
+
+.boxes {
+    width: 794px;
+    max-width: 100%;
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 172px);
+
+    column-gap: 34px;
+    row-gap: 46px;
+}
+
+/* ==============================
+   ARTWORK CARDS
+============================== */
+
+.art-card {
+    width: 172px;
+    height: 237px;
+
+    padding: 14px 15px 16px;
+
+    border-radius: 22px;
+
+    background: rgba(174, 159, 192, 0.36);
+
+    display: flex;
+    flex-direction: column;
+
+    transition: 0.3s ease;
+}
+
+.art-card:hover {
+    transform: translateY(-4px);
+
+    background: rgba(190, 170, 210, 0.45);
+}
+
+/* ==============================
+   CARD IMAGES
+============================== */
+
+.art-card img {
+    width: 140px;
+    height: 131px;
+
+    object-fit: cover;
+
+    border: 1px solid white;
+    border-radius: 15px;
+
+    display: block;
+}
+
+/* ==============================
+   CARD INFORMATION
+============================== */
+
+.card-info {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+
+    flex-wrap: nowrap;
+
+    margin-top: 10px;
+    gap: 3px;
+}
+
+.card-info > p {
+    font-size: 12px;
+    font-weight: 400;
+    color: white;
+
+    white-space: nowrap;
+}
+
+/* ==============================
+   LIKE ICON
+============================== */
+
+.icon {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 5px;
+    margin-top: 0;
+
+    flex-shrink: 0;
+}
+
+.icon p {
+    font-size: 8px;
+    color: white;
+
+    white-space: nowrap;
+}
+
+.icon i {
+    font-size: 13px;
+    color: #d9c5e9;
+
+    cursor: pointer;
+}
+
+/* ==============================
+   PLACE BID BUTTON
+============================== */
+
+.art-card button {
+    width: 118px;
+    height: 30px;
+    min-height: 30px;
+
+    margin: 22px auto 0;
+
+    border: 2px solid #bd65ff;
+    border-radius: 30px;
+
+    background: transparent;
+    color: white;
+
+    font-size: 13px;
+    font-weight: 400;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+
+    transition: 0.3s ease;
+}
+
+.art-card button:hover {
+    background: #a94ce8;
+}
+
+/* ==============================
+   DECORATIVE DOTS
+============================== */
+
+main::before {
+    content: "";
+
+    position: absolute;
+
+    top: 26px;
+    left: 10px;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.4);
+
+    box-shadow:
+        895px 0 rgba(255, 255, 255, 0.4),
+        0 447px rgba(255, 255, 255, 0.4),
+        895px 447px rgba(255, 255, 255, 0.4);
+
+    pointer-events: none;
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+
+@media (max-width: 900px) {
+
+    nav {
+        width: 378px;
+    }
+
+    .boxes {
+        width: 378px;
+
+        grid-template-columns: repeat(2, 172px);
+
+        justify-content: center;
+
+        column-gap: 34px;
+        row-gap: 30px;
+    }
+}
+
+@media (max-width: 420px) {
+
+    main {
+        padding: 30px 15px;
+    }
+
+    nav {
+        width: 172px;
+    }
+
+    .boxes {
+        width: 172px;
+
+        grid-template-columns: 172px;
+
+        justify-content: center;
+
+        row-gap: 25px;
+    }
+}
